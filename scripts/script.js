@@ -8,9 +8,6 @@ function resetForm(e){
   if(giftIndex){
     giftIndex = 0;
   };
-  if(giftPrintNumber){
-    giftPrintNumber = 0;
-  };
 };
 
 window.addEventListener('DOMContentLoaded', (event) => {
