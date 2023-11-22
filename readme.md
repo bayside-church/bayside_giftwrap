@@ -1,5 +1,5 @@
 # Gift Wrap Receipt Printer
-
+![Example](example.gif)
 This app allows the gift wrap station to print receipts and tags.
 
 ## Notice
