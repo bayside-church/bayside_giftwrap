@@ -69,3 +69,11 @@ label{
 form .inputgroup.settings{
     margin-top:100px;
 }
+
+
+footer p{
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 400;
+    opacity: 0.8;
+}

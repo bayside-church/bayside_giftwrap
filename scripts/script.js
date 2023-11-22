@@ -22,6 +22,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     document.querySelectorAll('.gift_description_input').forEach(input => {
       input.addEventListener('input', updateGiftIndex);
     });
+
+    document.getElementById('current-year').textContent = new Date().getFullYear();
   });
 function print(e)
     {
@@ -417,3 +419,5 @@ function print(e)
       
 
     }  
+
+
