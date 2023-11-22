@@ -1,4 +1,12 @@
 let giftIndex = 0;
+
+function resetForm(e){
+  if(e){
+    e.preventDefault();
+  };
+  document.getElementById("order-form").reset();
+};
+
 window.addEventListener('DOMContentLoaded', (event) => {
 
     function updateGiftIndex() {
@@ -405,7 +413,7 @@ function print(e)
 
       request.open(method, url, async);
       request.send(zpl);
-
-
+      resetForm();
+      
 
     }  

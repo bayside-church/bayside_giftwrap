@@ -8,7 +8,7 @@
   <body>
     <img src="banner-large.jpg" style="width:100%;">
     <div style="display:flex;flex-direction: column; width: 100%;align-items: center;">
-      <form>
+      <form id="order-form">
         <fieldset class="inputgroup">
           <legend>Customer Info</legend>
           <div>
@@ -171,15 +171,18 @@
           </div>
         </fieldset>
         <div class="inputgroup">
-          <input type="submit" value="Print" onclick="print(event); return false;">
+          <input class="btn btn-primary" type="submit" value="Print" onclick="print(event); return false;">
+          <button class="btn btn-secondary" onclick="resetForm(event)">Clear Form</button>
         </div>
-        <fieldset class="inputgroup settings">
-          <legend>Settings</legend>
-          <div>
-            <label for="ip_addr">Printer IP Address</label>
-            <input type="text" id="ip_addr" name="ip_addr" oninput="savePrinterIP()">
-          </div>
-        </fieldset>
+        </form>
+        <form id="settings-form">
+          <fieldset class="inputgroup settings">
+            <legend>Settings</legend>
+            <div>
+              <label for="ip_addr">Printer IP Address</label>
+              <input type="text" id="ip_addr" name="ip_addr" oninput="savePrinterIP()">
+            </div>
+          </fieldset>
       </form>
     </div>
     <div id="output"></div>

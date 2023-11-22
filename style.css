@@ -38,7 +38,7 @@ form .inputgroup{
     margin-top:5px;
 }
 
-input[type=submit]{
+.btn, input.btn{
     background-color: #17181a;
     color: white;
     font-size:20px;
@@ -52,6 +52,13 @@ input[type=submit]{
     border: 1px solid transparent;
     padding: 10px 15px;
     border-radius: 4px;
+}
+
+button.btn-secondary{
+    background-color: transparent;
+    font-size: 15px;
+    padding: 0;
+    width: 100%;
 }
 
 label{
