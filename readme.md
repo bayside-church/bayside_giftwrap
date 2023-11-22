@@ -15,6 +15,9 @@ This app is not hosted on the internet because the connection to the printer is 
 ![Printer](assets/printer.gif)
 ![Receipts](assets/receipts.jpeg)
 
+## Updates
+* If an update is available, please delete the files from the previous version before downloading the new one
+
 ## Author
 Zack Dutra
 
