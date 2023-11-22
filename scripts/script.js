@@ -5,6 +5,12 @@ function resetForm(e){
     e.preventDefault();
   };
   document.getElementById("order-form").reset();
+  if(giftIndex){
+    giftIndex = 0;
+  };
+  if(giftPrintNumber){
+    giftPrintNumber = 0;
+  };
 };
 
 window.addEventListener('DOMContentLoaded', (event) => {
