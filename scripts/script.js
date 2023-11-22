@@ -26,6 +26,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
       input.addEventListener('input', updateGiftIndex);
     });
 
+
+    document.querySelectorAll('input[id^="gift_"][id$="_paper"]').forEach(function(input) {
+      // Apply your logic here
+      // For example, to convert input to uppercase:
+      input.addEventListener('input', function() {
+          this.value = this.value.toUpperCase();
+      });
+    });
+  
+
     document.getElementById('current-year').textContent = new Date().getFullYear();
   });
 function print(e)
@@ -158,11 +168,11 @@ function print(e)
                   ^FX Set Text Size for larger box text
                   ^CF0,180
                   ^FX Text content and position for cubby number
-                  ^FO80,150^FD${cubby}^FS
+                  ^FO70,150^FD${cubby}^FS
                   ^FX Text content and position for order taker
                   ^FO300,150^FD${initials}^FS
                   ^FX Text content and position gifts number
-                  ^FO600,150^FD${giftIndex}^FS
+                  ^FO570,150^FD${giftIndex}^FS
 
                   ^FX Set Text Size for Date and Time
                   ^CF0,30
@@ -365,12 +375,9 @@ function print(e)
         let thisGiftZpl = `
           ^XA
 
+
           ^PW812
           ^LL609
-          ^MMC
-          ^MNM
-          ^ML1827
-          ~TA0
 
 
           ^FR^FO0,0^GB812,0,136^FS
@@ -384,65 +391,33 @@ function print(e)
           ^FX Cubby Paper Gift Size and text
           ^CF0,120
           ^FO350,390^FD${paper}^FS
-          ^FO150,390^FD${cubby}^FS
+          ^FO100,390^FD${cubby}^FS
           ^FO510,390^FD${giftPrintNumber}/${giftIndex}^FS
 
           ^FX Cubbie Paper Gift of footer Size and text
           ^CF0,40
           ^FO340,510^FDPaper^FS
-          ^FO140,510^FDCubbie^FS
-          ^FO540,510^FDGift^FS
+          ^FO100,510^FDCubbie^FS
+          ^FO600,510^FDGift^FS
 
           ^FX Grid Shapes
           ^FX Outer Box
-          ^FO85,350^GB600,200,3^FS
+          ^FO25,350^GB750,200,3^FS
           ^FX Vertical Line 1
           ^FO285,350^GB3,200,3^FS
           ^FX Vertical Line 2
           ^FO485,350^GB3,200,3^FS
           ^FX Cubby Black Bar
-          ^FR^FO88,497^GB594,0,50^FS
+          ^FR^FO28,497^GB744,0,50^FS
 
           ^XZ
         `;
         return thisGiftZpl;
       }
 
-      var testZpl = `
-          ^XA
-          ^PW812
-          ^LL406
-          ^MMC
-          ^MNM
-          ^ML1827
-          ~TA0
-
-          ^FR^FO0,0^GB812,0,136^FS
-          ^FX Test Print
-          ^CF0,90
-          ^FO85,50^FR^FDTest Print^FS
-          ^CF0,60
-          ^FB620,2,0,L^FT85,370^FDThis is a test.^FS
-          ^XZ
-      `;
-
-      var url = "http://"+ip_addr+"/pstprnt";
-      var method = "POST";
-      var async = true;
-      var request = new XMLHttpRequest();
-
-      request.onload = function () {
-        var status = request.status; 
-        var data = request.responseText; 
-        output.innerHTML = "Status: " + status + "<br>" + data;
-      }
-
-
-      request.open(method, url, async);
-      request.send(zpl);
+      sendRequest(ip_addr, zpl);
       resetForm();
-      
-
+    
     }  
 
 

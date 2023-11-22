@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="style.css">
     <script src="scripts/script.js"></script>
     <script src="scripts/savePrinterIp.js"></script>
+    <script src="scripts/sendRequest.js"></script>
+    <script src="scripts/sendTest.js"></script>
   </head>
   <body>
     <img src="assets/banner-large.jpg" style="width:100%;">
@@ -183,6 +185,7 @@
               <input type="text" id="ip_addr" name="ip_addr" oninput="savePrinterIP()">
             </div>
           </fieldset>
+          <button class="btn btn-secondary" onclick="sendTest(event, ip_addr)">Send Test to Printer</button>
       </form>
     </div>
     <div id="output"></div>
