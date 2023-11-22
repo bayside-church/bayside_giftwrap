@@ -367,6 +367,10 @@ function print(e)
 
           ^PW812
           ^LL609
+          ^MMC
+          ^MNM
+          ^ML1827
+          ~TA0
 
 
           ^FR^FO0,0^GB812,0,136^FS
@@ -403,6 +407,24 @@ function print(e)
         `;
         return thisGiftZpl;
       }
+
+      var testZpl = `
+          ^XA
+          ^PW812
+          ^LL406
+          ^MMC
+          ^MNM
+          ^ML1827
+          ~TA0
+
+          ^FR^FO0,0^GB812,0,136^FS
+          ^FX Test Print
+          ^CF0,90
+          ^FO85,50^FR^FDTest Print^FS
+          ^CF0,60
+          ^FB620,2,0,L^FT85,370^FDThis is a test.^FS
+          ^XZ
+      `;
 
       var url = "http://"+ip_addr+"/pstprnt";
       var method = "POST";
