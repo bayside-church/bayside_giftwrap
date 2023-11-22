@@ -12,7 +12,8 @@ This app is not hosted on the internet because the connection to the printer is 
 
 ## Network Setup
 * The printer needs to be on the same local network as the printer
-
+![Printer](printer.gif)
+![Receipts](receipts.jpeg)
 
 ## Author
 Zack Dutra
