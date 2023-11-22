@@ -28,9 +28,6 @@ function print(e)
           button.disabled = true;
           button.value = 'Printing...';
 
-          // Existing print function logic
-          // ...
-
           // Set a timeout to re-enable the button and reset text after 9 seconds
           setTimeout(function() {
               button.disabled = false;
@@ -90,14 +87,18 @@ function print(e)
 
                   ^FX Grid Shapes
                   ^FX Outer Box
-                  ^FO50,50^GB700,1700,3^FS
-                  ^FX Vertical Line 1 Top Middle
-                  ^FO400,50^GB3,300,3^FS
-                  ^FX Vertical Line 2 
+                  ^FO50,50^GB700,1600,3^FS
+                  ^FX Vertical Line 1
+                  ^FO250,50^GB3,250,3^FS
+                  ^FX Vertical Line 2
+                  ^FO550,50^GB3,250,3^FS
+                  ^FX Vertical Line 3
+                  ^FO400,300^GB3,50,3^FS
+                  ^FX Vertical Line 4
                   ^FO400,415^GB3,65,3^FS
-                  ^FX Vertical Line 3 who for left
+                  ^FX Vertical Line 4 who for left
                   ^FO400,480^GB3,1170,3^FS
-                  ^FX Vertical Line 4 who for right
+                  ^FX Vertical Line 5 who for right
                   ^FO630,480^GB3,1170,3^FS
                   ^FX Horizontal Line 1
                   ^FO50,100^GB700,3,3^FS
@@ -131,22 +132,24 @@ function print(e)
                   ^FO50,1450^GB700,3,3^FS
                   ^FX Horizontal Line 15
                   ^FO50,1550^GB700,3,3^FS
-                  ^FX Horizontal Line 16
-                  ^FO50,1650^GB700,3,3^FS
 
 
                   ^CF0,40
                   ^FX Text content and position for cubby number header
                   ^FO80,60^FDCubby #^FS
                   ^FX Text content and position for order taker header
-                  ^FO420,60^FDOrder Taker Initials^FS
+                  ^FO300,60^FDOrder Taker^FS
+                  ^FX Text content and position for gifts header
+                  ^FO600,60^FDGifts^FS
 
                   ^FX Set Text Size for larger box text
                   ^CF0,180
                   ^FX Text content and position for cubby number
                   ^FO80,150^FD${cubby}^FS
                   ^FX Text content and position for order taker
-                  ^FO440,150^FD${initials}^FS
+                  ^FO300,150^FD${initials}^FS
+                  ^FX Text content and position gifts number
+                  ^FO600,150^FD${giftIndex}^FS
 
                   ^FX Set Text Size for Date and Time
                   ^CF0,30
@@ -251,10 +254,6 @@ function print(e)
                   ^FX Text content and position for paper row 11
                   ^FO650,1570^FD${gift_11_paper}^FS
 
-                  ^FX Set Text Size signature
-                  ^CF0,25
-                  ^FB300,2,0,L^FT80,1710^FDPickup Signature:^FS
-
                   ^FX Set Text Size disclaimer
                   ^CF0,20
                   ^FB680,2,0,L^FT80,1800^FDYou will receive text messages or emails from Bayside Church. Message & data rates may apply. Messages frequency varies. Reply STOP to stop, HELP for help. ^FS
@@ -268,10 +267,20 @@ function print(e)
                   ^FO5,700^FDCustomer Copy^FS
                   ^FO5,1200^FDCustomer Copy^FS
                   ^FWN
+
+                  ^FO300,1675^GFA,1728,1728,24,P0F,O07FC,N01FFE,N07IF,M01JF,M03FE3F8,M0FF81F8,L01FE01F8,L03FC01F8gK06,L07F001F8gK0F,L0FE001F8gJ03F8,003C01FC003FgK07F8,007E03F8003FgK0FF8,007F07FI07EgJ01FF8,003F8FEI07EgJ03EF,001F9FCI0FCgJ03DF,I0IF8001FCgJ079F,I0IFI03F8g06I0F3E,I0FFEI07Fg01EI0F3C,I0FFCI0FEP03O03E001E7C,I0FF8001FCP078N07C003EF8,I0FFI03F8K0FJ078N0FC003CF8,I0FEI07FJ01FFCI078N0780079F,I0FC003FEJ0IFEI0F8J03F003I07FE,I0FC03FFCI0JFEI0F8I03FFL07FC,001F81IFC007JFC001F8001IFK07FFC,003F87IFE03JFDC003FI07IF1I03IF81F8,003F8KF1KF3E00FE001IFE7C00JF07FC,007F1FFE3LFC7E01FE1F7FF8CFC01IFE1FFC,00FF1FFC1LF8FE03FC3JF03FC07FBFC3FFC,00FF1FF01IFC7E1FC0FF87JF0FFC0FF3F87CF8,01FF07803FFE0FC3F81FF07FF1F3FFC1FC7F0F9F8,01FFJ0IF81F87F07FF0FF80FFEF87F8FE1F3F,03FEI03IF01F9FF1FFE3FE00FFCF9FF1FE1E7E03F003C,07FEI07IF01FBFF7FFCFFC00FE0JF3FE3FFC3KFE,07FE001FF1F03KFE7IFC03FC1PF1LFC,0FFC007FC1F03KFC7IFC0FFC1WF8,0FFC00FF01F01FF9FF07FC7C3FF81FE7FFBPFE,0FFC01FE01F01FF1FC0FF07C7FF81FC7FF1MF0FF,1FF807F801F00FE0F01FC07CIF00F07FC1FBIFC,1FF80FF001FM07F807CFFCJ03F80E1FFE,3FF81FC003FL01FE007C7F8K08J07E,3EF03F8003EL03F8007C3C,3DF07FI07EL0FFI078,7DF0FEI07CK01FCI0F8,7FE1FCI0FCK03F8I0F8,7FE3F8001F8K07FJ0F8,7FC7FI03F8J01FCJ0F8,7FCFEI03FK03F8I01F,FF8FCI07EK07FJ01F,FF9F8I0FCK0FEJ01F,FF1FI01FCJ01FCJ03E,FE3FI03F8J01F8J03E,FE3EI0FFK03FK03E,7C7C001FEK07EK07C,787C003FCK0FCK07C,78F800FF8K0F8K0F8,00F801FEK01F8J01F8,00F807FCK01FK01F,00F81FF8K03FK03F,00JFEL03EK07E,00JFCL03EK0FC,007IFM03EJ01F8,007FFCM03EJ03F8,003FFN03EJ0FF,S03FI03FE,S03FC01FFC,S01LF,T0KFE,T07JF8,T01IFE,U03FE,^FS
+      `;
+      var zplSignature = `
+                  ^FX Set Text Size signature
+                  ^CF0,25
+                  ^FB300,2,0,L^FT80,1710^FDPickup Signature:^FS
+                  ^FX Signature Box
+                  ^FO50,1647^GB700,100,3^FS
       `;
       var zplOurCopy = `
                 ^XA
                 ^${zplMain}
+                ^${zplSignature}
                 ^XZ
       `;
       var zplCustomerCopy = `
