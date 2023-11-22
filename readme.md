@@ -1,5 +1,5 @@
 # Gift Wrap Receipt Printer
-![Example](example.gif)
+![Example](assets/example.gif)
 This app allows the gift wrap station to print receipts and tags.
 
 ## Notice
@@ -12,8 +12,8 @@ This app is not hosted on the internet because the connection to the printer is 
 
 ## Network Setup
 * The printer needs to be on the same local network as the printer
-![Printer](printer.gif)
-![Receipts](receipts.jpeg)
+![Printer](assets/printer.gif)
+![Receipts](assets/receipts.jpeg)
 
 ## Author
 Zack Dutra
