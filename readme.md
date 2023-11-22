@@ -11,7 +11,9 @@ This app is not hosted on the internet because the connection to the printer is 
 * Open the index file to launch the app
 
 ## Network Setup
-* The printer needs to be on the same local network as the printer
+* The computer with this app needs to be on the same local network as the printer
+* Recommended setup is to use a small network switch and connect laptops and printers to that - assign static IP addresses to all devices
+
 ![Printer](assets/printer.gif)
 ![Receipts](assets/receipts.jpeg)
 
