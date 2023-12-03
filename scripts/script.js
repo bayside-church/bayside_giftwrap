@@ -67,6 +67,7 @@ function print(e)
       var first = document.getElementById("first").value;
 	    var last = document.getElementById("last").value;
 	    var phone = document.getElementById("phone").value;
+      console.log(phone);
 	    var cubby = document.getElementById("cubby").value;
 	    var initials = document.getElementById("initials").value;
       var ip_addr = document.getElementById("ip_addr").value;

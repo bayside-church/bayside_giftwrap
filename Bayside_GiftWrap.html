@@ -6,6 +6,7 @@
     <script src="scripts/savePrinterIp.js"></script>
     <script src="scripts/sendRequest.js"></script>
     <script src="scripts/sendTest.js"></script>
+    <script src="scripts/formatPhone.js"></script>
   </head>
   <body>
     <img src="assets/banner-large.jpg" style="width:100%;">
@@ -23,7 +24,7 @@
           </div>
           <div>
             <label for="phone">Customer Phone Number</label>
-            <input type="tel" id="phone" name="phone">
+            <input type="text" id="phone" name="phone" maxlength="12" value="" title="Format: XXXXXXXXXX" onkeydown="userInput(this, event);" onblur="checkFormat(this);">
           </div>
         </fieldset>
         <fieldset class="inputgroup">
