@@ -165,12 +165,16 @@ function print(e)
                   ^FX Text content and position for gifts header
                   ^FO600,60^FDGifts^FS
 
-                  ^FX Set Text Size for larger box text
-                  ^CF0,180
+                  ^FX Set Text Size for cubbie box text
+                  ^CF0,90
                   ^FX Text content and position for cubby number
                   ^FO70,150^FD${cubby}^FS
+                  ^FX Set Text Size for order taker text
+                  ^CF0,180
                   ^FX Text content and position for order taker
                   ^FO300,150^FD${initials}^FS
+                  ^FX Set Text Size for gifts number text
+                  ^CF0,180
                   ^FX Text content and position gifts number
                   ^FO570,150^FD${giftIndex}^FS
 
@@ -391,7 +395,9 @@ function print(e)
           ^FX Cubby Paper Gift Size and text
           ^CF0,120
           ^FO350,390^FD${paper}^FS
+          ^CF0,90
           ^FO100,390^FD${cubby}^FS
+          ^CF0,120
           ^FO510,390^FD${giftPrintNumber}/${giftIndex}^FS
 
           ^FX Cubbie Paper Gift of footer Size and text
